@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title>
+    <%= title %>
+  </title>
+</head>
+<body>
+
+<form action="#">
+  <input type="number" min="1" max="9" id="company"/>
+  <input type="submit" value="setear" />
+</form>
+
+<script>
+  function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+
+  document.querySelector('form').addEventListener("submit", function(e){
+    let company = document.querySelector('#company').value;
+    if (company >= 1 && company <= 9) {
+      setCookie('company', company);
+      window.location.replace(window.location.origin);
+      e.preventDefault();
+    } else {
+      e.preventDefault();
+      return false;
+    }
+
+  }, false);
+</script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ const app = express();
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');
 const {getCompanyPage, getCompanyResultPage} = require('./routes/company');
+const {getSetPage} = require('./routes/set');
 const port = 5000;
 
 // create connection to database
@@ -33,7 +34,8 @@ app.set('views', __dirname + '/views'); // set express to look in this folder to
 app.set('view engine', 'ejs'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // parse form data client
-app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
+app.use(express.static(path.join(__dirname, 'dist'))); // configure express to use public folder
+app.use(express.static( path.join(__dirname, 'js'))); // configure express to use public folder
 
 // routes for the app
 
@@ -44,6 +46,8 @@ app.get('/global', getGlobalPage);
 
 app.get('/company/:id', getCompanyPage);
 app.get('/company/:id/result', getCompanyResultPage);
+
+app.get('/set', getSetPage);
 /*
  app.get('/add', addPlayerPage);
  app.get('/edit/:id', editPlayerPage);
