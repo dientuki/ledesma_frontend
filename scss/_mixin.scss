@@ -1,0 +1,29 @@
+@mixin notext() {
+  overflow: hidden;
+  text-indent: -999em;
+}
+
+@mixin hide() {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin fullCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin paddingContent($fontSize: 16) {
+  padding: 0 #{$wrapper/$fontSize}em;
+}
+
+@mixin marginContent($fontSize: 16) {
+  margin: 0 #{$wrapper/$fontSize}em;
+}
+
+@mixin notext() {
+  overflow: hidden;
+  text-indent: -999em;
+}

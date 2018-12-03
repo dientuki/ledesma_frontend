@@ -1,0 +1,23 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+
+<% company.forEach((team, index) => { %>
+<div>
+  <span><%= team.color %></span>
+  <span><%= team.team %></span>
+  <span><%= team.teamPoints %></span>
+</div>
+<% }) %>
+
+<% globalres.forEach((team, index) => { %>
+
+<div>
+  <span><%= team.color %></span>
+  <span><%= team.company %></span>
+  <span><%= team.teamPoint %></span>
+</div>
+
+<% }) %>
+
+<% include partials/footer.ejs %>
+<% include partials/script.ejs %>

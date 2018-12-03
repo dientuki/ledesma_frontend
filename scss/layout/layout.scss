@@ -1,0 +1,21 @@
+@import "gridlex-vars";
+
+.big-wrapper,
+.content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 #{$sitePadding/$fs}em;
+  box-sizing: border-box;
+}
+
+.big-wrapper {
+  max-width: (1800em/$fs);
+}
+
+.content-wrapper {
+  max-width: (1180em/$fs);
+}
+
+.main {
+  margin-top: (30em/$fs);
+}

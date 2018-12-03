@@ -1,0 +1,77 @@
+/* stylelint-disable selector-no-qualifying-type  */
+body {
+  padding-top: #{($header)/$fs}em;
+  word-wrap: break-word;
+  font-family: Roboto, sans-serif;
+  position: relative;
+  will-change: left;
+  left: 0;
+  transition: left $close $easing;
+
+  &.home {
+    padding-top: 0;
+  }
+}
+
+/* stylelint-enable */
+
+.overlay {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: rgba($black, .6);
+  z-index: 100;
+  opacity: 0;
+  will-change: visibility, opacity, width;
+  visibility: hidden;
+  transition: visibility 0s $easing $close, opacity $close $easing, width $close $easing;
+  width: 100%;
+  display: none;
+
+  .expanded & {
+    width: calc(100% - #{125/$fs}em);
+    opacity: .99;
+    visibility: visible;
+    transition: opacity $open $easing, width $open $easing;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: $links;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+audio {
+  width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+iframe {
+  background: $black;
+}

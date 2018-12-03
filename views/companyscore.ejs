@@ -1,0 +1,36 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+
+<% company.forEach((team, index) => { %>
+<div>
+  <span><%= team.color %></span>
+  <span><%= team.team %></span>
+  <span><%= team.teamPoint %></span>
+</div>
+<% }) %>
+
+<hr />
+
+<% team.forEach((t, index) => { %>
+
+<div>
+  <span><%= t.color %></span>
+  <span><%= t.company %></span>
+  <span><%= t.teamPoint %></span>
+</div>
+
+<% }) %>
+
+<hr />
+
+<% business.forEach((company, index) => { %>
+
+<div>
+  <span><%= company.company %></span>
+  <span><%= company.totalPoints %></span>
+</div>
+
+<% }) %>
+
+<% include partials/footer.ejs %>
+<% include partials/script.ejs %>

@@ -1,0 +1,10 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+
+<% games.forEach((game, index) => { %>
+  <p><%= game.company %></p>
+  <p><%= game.totalPoints %></p>
+<% }) %>
+
+<% include partials/footer.ejs %>
+<% include partials/script.ejs %>

@@ -1,0 +1,28 @@
+/* clear fix */
+.bne-gallery-masonry-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.gallery-single {
+  width: 33.33%;
+}
+
+.gallery-single {
+  float: left;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 300ms ease-in-out;
+    will-change: transform;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

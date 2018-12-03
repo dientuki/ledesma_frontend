@@ -1,0 +1,42 @@
+.wpsm_panel-group {
+  .ac_title_class {
+    color: $links;
+  }
+}
+
+.wpsm_faq {
+  counter-reset: faq;
+
+  .wpsm_panel {
+    padding-left: (70em/$fs);
+    position: relative;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: (70em/$fs);
+      height: 100%;
+      background: $links;
+      content: "";
+    }
+
+    &:before {
+      $tfs: 20;
+      counter-increment: faq;
+      content: counter(faq);
+      color: $white;
+      height: 1em;
+      line-height: 1em;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      left: 0;
+      width: (70em/$tfs);
+      text-align: center;
+      font-weight: $bold;
+      z-index: 5;
+      font-size: #{$tfs/$fs}em;
+    }
+  }
+}
