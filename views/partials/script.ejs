@@ -33,11 +33,11 @@
         window.location.replace(page.replace(':id', company));
       });
 
-      socket.on('refresh', function(id){
+      socket.on('refresh', function(page){
         const company = getCookie('company');
-        console.log(company, id);
+        console.log(company, page);
         
-        if (company == id) {
+        if (company == page) {
         window.location.reload(true);
         }
         
