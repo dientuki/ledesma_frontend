@@ -53,3 +53,29 @@
     transform: scale(1.1);
   }
 }
+
+.colorteam {
+  border-radius: 100em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  position: relative;
+  top: (8rem/$fs);
+  right: (16rem/$fs);
+
+  &.blue {
+    background: $blue;
+  }
+
+  &.green {
+    background: $green;
+  }
+
+  &.pink {
+    background: $pink;
+  }
+
+  &.violet {
+    background: $violet;
+  }
+}

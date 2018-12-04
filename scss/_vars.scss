@@ -1,19 +1,14 @@
 /* some font sizes */
 $fs:16; //Base font-size
 
-$header: 75; //header height
-$bottomLine: 10; //deco line
-$sitePadding: 20;
-$footerMenu: 60;
+/* teams colors */
+$green: #00ff42;
+$pink: #ff33e4;
+$violet: #7c049c;
+$blue: #4e60ff;
 
-$menuBreak: 1023;
-
-/* text colors */
-$links: #009374;
-$almostBlack: #1A161B;
-$numbers: #F9f8f7;
-//$numbers: #0f0;
-$label: #333;
+/* bg */
+$titleBG: #00bdf1;
 
 /* doh */
 $black: #000;
@@ -24,23 +19,3 @@ $bolder: 900;
 $bold: 700;
 $medium: 500;
 $light: 300;
-
-/* bg */
-$headerBG: #BEF4DE;
-$footerBG: #464646;
-$join_greenBG: #aada73;
-$join_greenBottomBG: #97c75d;
-$join_blueBG: #5fbbed;
-$join_blueBottomBG: #37aae9;
-
-/* lines */
-$headerLine: #009374;
-$formBorder: #d7d7d7;
-$borderLine: #ececec;
-
-/* degrades */
-
-/* animations */
-$open: 500ms;
-$close: $open / 2;
-$easing: cubic-bezier(.08, .74, .39, .97);

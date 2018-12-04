@@ -2,7 +2,6 @@ module.exports = {
     getWelcomePage: (req, res) => {
         res.render('static.ejs', {
             title: "Bienvenidos",
-            css: css
         });
     },
     getPausePage: (req, res) => {

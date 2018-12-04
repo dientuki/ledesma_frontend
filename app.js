@@ -9,7 +9,7 @@ const server = app.listen(port, () => {
 }); //require('http').Server(app);
 const io = require('socket.io').listen(server);
 const fs = require('fs');
-const css = fs.readFileSync('dist/ledesma.css').toString();
+const css = fs.readFileSync('dist/ledesma.css', 'utf8');
 
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');

@@ -18,7 +18,7 @@ const config = {
     // Compiler Configuration
     // ----------------------------------
     compiler_devtool         : 'source-map',
-    compiler_public_path     : '../dist/', //isomorphicConfig.client.cdn_static_url + "/",
+    compiler_public_path     : '/', //isomorphicConfig.client.cdn_static_url + "/",
 
     build_number: process.env.CIRCLE_BUILD_NUM
 };

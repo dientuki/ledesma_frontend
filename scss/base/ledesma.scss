@@ -1,6 +1,7 @@
 body {
   overflow: hidden;
   font-family: avantgarde, arial;
+  color: $white;
 }
 
 h1,
@@ -21,4 +22,8 @@ ol {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.site {
+  position: relative;
 }

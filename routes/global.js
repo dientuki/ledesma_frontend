@@ -8,7 +8,7 @@ module.exports = {
         res.redirect('/');
       }
       res.render('global.ejs', {
-        title: "Welcome to Socka | View Players",
+        title: "Posiciones Global Empresas",
         games: result
       });
     });

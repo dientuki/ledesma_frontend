@@ -15,7 +15,7 @@ module.exports = {
           res.redirect('/');
         }
         res.render('company.ejs', {
-          title: "Resultados",
+          title: "Resultados por equipos",
           company: resultCompany,
           globalres: resultGlobal
         });
@@ -46,7 +46,7 @@ module.exports = {
           }
 
           res.render('companyscore.ejs', {
-            title: "Resultados",
+            title: "Ganadores del juego",
             company: resultBestCompany,
             team: resultBestTeam,
             business: resultBestGlobal
