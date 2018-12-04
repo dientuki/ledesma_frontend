@@ -1,21 +1,26 @@
+const port = 5000;
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
 const app = express();
+const server = app.listen(port, () => {
+  console.log(`Server running on port: ${port}`);
+}); //require('http').Server(app);
+const io = require('socket.io').listen(server);
 
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');
 const {getCompanyPage, getCompanyResultPage} = require('./routes/company');
 const {getSetPage} = require('./routes/set');
-const port = 5000;
+
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const db = mysql.createConnection ({
   host: 'localhost',
-  user: 'root',
-  password: 'takumi',
+  user: 'ledesma',
+  password: 'azucar',
   database: 'ledesma'
 });
 
@@ -48,15 +53,18 @@ app.get('/company/:id', getCompanyPage);
 app.get('/company/:id/result', getCompanyResultPage);
 
 app.get('/set', getSetPage);
-/*
- app.get('/add', addPlayerPage);
- app.get('/edit/:id', editPlayerPage);
- app.get('/delete/:id', deletePlayer);
- app.post('/add', addPlayer);
- app.post('/edit/:id', editPlayer);
- */
 
 // set the app to listen on the port
-app.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
+
+io.on('connection', function(socket){
+  /**
+   * Join Room
+   */
+  socket.on('change', function(data){
+    io.emit('change', data.page);
+  });
+
+  socket.on('refresh', function(){
+    io.emit('refresh');
+  });
 });

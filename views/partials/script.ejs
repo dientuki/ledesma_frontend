@@ -1,3 +1,43 @@
     <script type="text/javascript" src="/socket.js"></script>
+    <script>
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      /*
+      if (window.location.pathname == '/global') {
+        setTimeout(function(){
+          const company = getCookie('company'),
+                  page = '/company/:id';
+          window.location.replace(page.replace(':id', company));
+        }, 1000*10);
+      }
+      */
+
+      const socket = io.connect('http://localhost:5000');
+
+      socket.on('change', function(page){
+        const company = getCookie('company');
+        window.location.replace(page.replace(':id', company));
+      });
+
+      socket.on('refresh', function(){
+        window.location.reload(true);
+      });
+
+    </script>
+
   </body>
 </html>
