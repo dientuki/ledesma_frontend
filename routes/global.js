@@ -9,7 +9,8 @@ module.exports = {
       }
       res.render('global.ejs', {
         title: "Posiciones Global Empresas",
-        games: result
+        games: result,
+        css: css
       });
     });
   },

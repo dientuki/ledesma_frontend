@@ -17,7 +17,8 @@ module.exports = {
         res.render('company.ejs', {
           title: "Resultados por equipos",
           company: resultCompany,
-          globalres: resultGlobal
+          globalres: resultGlobal,
+          css: css
         });
       });
     });
@@ -49,7 +50,8 @@ module.exports = {
             title: "Ganadores del juego",
             company: resultBestCompany,
             team: resultBestTeam,
-            business: resultBestGlobal
+            business: resultBestGlobal,
+            css: css
           });
 
         });
