@@ -1,12 +1,7 @@
 @font-face {
-  font-family: PatuaOne-regular;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Cabin-regular;
+  font-family: avantgarde;
+  src: url(../fonts/avantn-webfont.woff2) format("woff2"),
+    url(../fonts/avantn-webfont.woff) format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

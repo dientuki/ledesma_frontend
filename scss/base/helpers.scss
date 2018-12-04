@@ -41,48 +41,15 @@
   clear: both;
 }
 
-[class *= aspect-] {
-  margin: 0;
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
-  height: 0;
-  position: relative;
-  display: block;
-  overflow: hidden;
+  height: 100%;
+  transform: translateY(-50%) translateX(-50%);
 
-  img,
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.aspect-16-9 {
-  padding-bottom: (9%/16*100);
-}
-
-.aspect-office {
-  padding-bottom: (550%/1600*100);
-}
-
-@media (max-width: (#{$menuBreak/$fs}em)) {
-  .aspect-hero-image {
-    img {
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-    }
-  }
-
-  .aspect-office {
-    padding-bottom: 50%;
-
-    img {
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-    }
+  .svg-bg {
+    transform: scale(1.1);
   }
 }

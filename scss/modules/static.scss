@@ -1,0 +1,17 @@
+.logo-big {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  width: (1500em/$fs);
+}
+
+.static-info {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 13%;
+  font-size: (75em/$fs);
+  text-transform: uppercase;
+  color: white;
+}

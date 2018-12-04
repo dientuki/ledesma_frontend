@@ -8,7 +8,7 @@
     "build:dev": "better-npm-run build:dev",
     "after:build": "npm run svg",
     "svg": "svgo --config=svgo.yml -f ./images -o ./dist/svg",
-    "presvg": "rm -rf dist/svg && mkdir dist/svg",
+    "presvg": "rm -rf dist/svg && mkdir dist/svg"
   },
   "betterScripts": {
     "build:prod": {
