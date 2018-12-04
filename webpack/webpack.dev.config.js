@@ -7,9 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    site:'./js/site.js',
-    credil: './scss/credil-style.scss',
-    critical: './scss/critical.scss'
+    ledesma: './scss/ledesma.scss',
   },
   output: {
     filename: '[name].js',

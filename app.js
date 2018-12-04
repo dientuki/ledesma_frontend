@@ -8,6 +8,8 @@ const server = app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 }); //require('http').Server(app);
 const io = require('socket.io').listen(server);
+const fs = require('fs');
+const css = fs.readFileSync('dist/ledesma.css').toString();
 
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');
@@ -32,6 +34,7 @@ db.connect((err) => {
 console.log('Connected to database');
 });
 global.db = db;
+global.css = css;
 
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port

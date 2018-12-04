@@ -5,16 +5,10 @@
   "main": "index.js",
   "sideEffects": false,
   "scripts": {
-    "build:prod": "better-npm-run build:prod",
     "build:dev": "better-npm-run build:dev",
-    "after:build": "npm run svg && npm run fixurl && npm run vendor",
-    "eslint": "eslint js",
+    "after:build": "npm run svg",
     "svg": "svgo --config=svgo.yml -f ./images -o ./dist/svg",
     "presvg": "rm -rf dist/svg && mkdir dist/svg",
-    "fixurl": "sed -i 's/url([./a-z0-9-]*)//g' dist/critical-*.css",
-    "suitTest": "npm run jest && npm run eslint",
-    "vendor": "bin/uglifyjs.js",
-    "style": "stylelint dist/**/*.css --config stylelint-prod.json"
   },
   "betterScripts": {
     "build:prod": {
