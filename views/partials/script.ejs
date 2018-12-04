@@ -35,6 +35,7 @@
 
       socket.on('refresh', function(id){
         const company = getCookie('company');
+        console.log(company, id);
         
         if (company == id) {
         window.location.reload(true);
