@@ -67,7 +67,7 @@ io.on('connection', function(socket){
     io.emit('change', data.page);
   });
 
-  socket.on('refresh', function(){
-    io.emit('refresh');
+  socket.on('refresh', function(data){
+    io.emit('refresh', data.id);
   });
 });
