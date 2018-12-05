@@ -69,6 +69,6 @@ io.on('connection', function(socket){
   });
 
   socket.on('refresh', function(data){
-    io.emit('refresh', data.id);
+    io.emit('refresh', data.page);
   });
 });
