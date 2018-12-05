@@ -1,30 +1,4 @@
 module.exports = {
-  getCompanyPage: (req, res) => {
-    let company = req.params.company;
-    console.log(req.params)
-    let queryTeam = "SELECT team, color, sum(point) as teamPoints FROM `points` INNER JOIN company2team ON points.fk_c2t = company2team.id INNER JOIN teams ON company2team.fk_team = teams.id where fk_company = " + company + "  group by fk_team order by teamPoints desc"; // query database to get all the players
-    let queryGlobal = "SELECT color, company, sum(point) as teamPoint FROM `points`   INNER JOIN company2team ON points.fk_c2t = company2team.id   INNER JOIN teams ON company2team.fk_team = teams.id   INNER JOIN business ON company2team.fk_company = business.id   group by fk_team, fk_company order by teamPoint desc limit 10";
-
-    // execute query
-    db.query(queryTeam, (err, resultCompany) => {
-      if (err) {
-        res.redirect('/');
-      }
-
-      db.query(queryGlobal, (err, resultGlobal) => {
-        if (err) {
-          res.redirect('/');
-        }
-        res.render('company.ejs', {
-          title: "Resultados por equipos",
-          company: resultCompany,
-          globalres: resultGlobal,
-          css: global.css
-        });
-      });
-    });
-  },
-
   getCompanyResultPage: (req, res) => {
     let company = req.params.company;
     let bestCompany = "SELECT color, team, sum(point) as teamPoint FROM `points` INNER JOIN company2team ON points.fk_c2t = company2team.id INNER JOIN teams ON company2team.fk_team = teams.id where fk_company = " + company + " group by fk_team order by teamPoint desc limit 1"; // query database to get all the players

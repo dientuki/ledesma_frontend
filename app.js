@@ -11,9 +11,10 @@ const io = require('socket.io').listen(server);
 const fs = require('fs');
 //const css = fs.readFileSync('dist/ledesma.css').toString();
 
+const {getPerTeamPage} = require('./routes/perteam');
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');
-const {getCompanyPage, getCompanyResultPage} = require('./routes/company');
+const {getCompanyResultPage} = require('./routes/company');
 const {getSetPage} = require('./routes/set');
 
 
@@ -52,7 +53,7 @@ app.get('/pause', getPausePage);
 app.get('/finish', getFinishPage);
 app.get('/global', getGlobalPage);
 
-app.get('/company/:company', getCompanyPage);
+app.get('/company/:company', getPerTeamPage);
 app.get('/company/:company/result', getCompanyResultPage);
 
 app.get('/set', getSetPage);

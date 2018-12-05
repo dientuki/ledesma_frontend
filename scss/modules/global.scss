@@ -1,0 +1,17 @@
+.global-scores {
+  text-align: center;
+  align-items: center;
+  height: (700em/$fs);
+}
+
+.global-title {
+  $tfs: 60;
+  font-size: #{$tfs/$fs}em;
+}
+
+.global-score {
+  $tfs: 85;
+  font-size: #{$tfs/$fs}em;
+  color: $titleBG;
+  font-weight: $bold;
+}
