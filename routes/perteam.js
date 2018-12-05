@@ -17,7 +17,7 @@ module.exports = {
           res.redirect('/');
         }
         res.render('company.ejs', {
-          title: "Resultados por equipos",
+          title: "Posiciones por equipos",
           company: resultCompany,
           globalres: resultGlobal,
           css: css

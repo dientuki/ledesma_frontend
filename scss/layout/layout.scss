@@ -3,7 +3,11 @@
   width: 100%;
   flex-wrap: wrap;
 
-  .col-3 {
+  .col-4 {
     flex-basis: 33.33%;
+  }
+
+  .col-8 {
+    flex-basis: 66.66%;
   }
 }

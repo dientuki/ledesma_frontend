@@ -1,26 +1,30 @@
-<% include partials/head.ejs %>
+<% include partials/head-plain-noline.ejs %>
 <div class="site">
 <% include partials/header.ejs %>
 
-  partea
-<% company.forEach((team, index) => { %>
-<div>
-  <span><%= team.color %></span>
-  <span><%= team.team %></span>
-  <span><%= team.teamPoints %></span>
-</div>
-<% }) %>
+  <div class="grid">
+
+    <div class="col-8 byCompany">
+      <div class="winner-title">Empresa</div>
+      <ul>
+        <% company.forEach((team, index) => { %>
+          <li><span class="colorteam <%= team.color %>"></span><%= team.team %><span class="companyPoints"><%= team.teamPoints %></span></li>
+        <% }) %>
+      </ul>
+    </div>
 
 
-<% globalres.forEach((team, index) => { %>
+    <div class="col-4 byGeneral">
+      <div class="winner-title">Global</div>
+      <ul>
+        <% globalres.forEach((team, index) => { %>
+        <li><span class="colorteam <%= team.color %>"></span><%= team.company %><span class="teamPoints"><%= team.teamPoint %></span></li>
+        <% }) %>
+      </ul>
+    </div>
 
-<div>
-  <span><%= team.color %></span>
-  <span><%= team.company %></span>
-  <span><%= team.teamPoint %></span>
-</div>
 
-<% }) %>
+    </div>
 </div>
 <% include partials/footer.ejs %>
 <% include partials/script.ejs %>

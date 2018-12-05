@@ -10,6 +10,7 @@ $tfs: 40;
   font-weight: $bold;
   line-height: (70em/$tfs);
   height: (70em/$tfs);
+  text-align: center;
 }
 
 .winner-middle {
@@ -60,4 +61,53 @@ $tfs: 40;
   $tfs: 50;
   font-size: #{$tfs/$fs}em;
   font-weight: $bold;
+}
+
+.byCompany {
+  border-right: solid (1em/$fs) $white;
+  box-sizing: border-box;
+
+  li {
+    $tfs: 60;
+    font-size: #{$tfs/$fs}em;
+    margin: (70em/$tfs) (110em/$tfs) 0 (220em/$tfs);
+    position: relative;
+  }
+
+  .companyPoints {
+    $pfs: 100;
+    font-size: #{$pfs/$tfs}em;
+    color: $titleBG;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: $bold;
+  }
+}
+
+.byGeneral {
+  li {
+    $tfs: 40;
+    font-size: #{$tfs/$fs}em;
+    margin: (20em/$tfs) (110em/$tfs) 0 (110em/$tfs);
+    position: relative;
+  }
+
+  .colorteam {
+    left: -.25em;
+    top: 0;
+    width: .75em;
+    height: .75em;
+  }
+
+  .teamPoints {
+    $pfs: 45;
+    font-size: #{$pfs/$tfs}em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: $bold;
+  }
 }

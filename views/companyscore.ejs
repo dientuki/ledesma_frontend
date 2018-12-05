@@ -5,8 +5,8 @@
   <div class="grid">
 
     <% company.forEach((team, index) => { %>
-    <div class="col-3">
-      <div class="winner-title">me falta pero se consig</div>
+    <div class="col-4">
+      <div class="winner-title">Empresa</div>
       <div class="winner-points"><span class="after"></span><span><%= team.teamPoint %></span><span class="before"></span></div>
       <div class="winner-name"><span class="colorteam <%= team.color %>"></span><%= team.team %></div>
     </div>
@@ -14,7 +14,7 @@
 
     <% team.forEach((t, index) => { %>
 
-    <div class="col-3">
+    <div class="col-4">
       <div class="winner-title winner-middle">Global Equipo</div>
       <div class="winner-points"><span class="after"></span><span><%= t.teamPoint %></span><span class="before"></span></div>
       <div class="winner-name"><span class="colorteam <%= t.color %>"></span><%= t.company %></div>
@@ -24,7 +24,7 @@
 
     <% business.forEach((company, index) => { %>
 
-    <div class="col-3">
+    <div class="col-4">
       <div class="winner-title">Empresa</div>
       <div class="winner-points"><span class="after"></span><span><%= company.totalPoints %></span><span class="before"></span></div>
       <div class="winner-name"><%= company.company %></>
