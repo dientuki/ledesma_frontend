@@ -25,12 +25,11 @@
       });
 
       socket.on('refresh', function(id){
-        const company = getCookie('company');
-console.log(company, id);
+        //const company = getCookie('company');
 
-        if (company == id) {
+        //if (company == id) {
         window.location.reload(true);
-        }
+        //}
         
       });
 
