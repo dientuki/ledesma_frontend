@@ -6,7 +6,7 @@
 
     <% company.forEach((team, index) => { %>
     <div class="col-4">
-      <div class="winner-title">Empresa</div>
+      <div class="winner-title"><%= cname %></div>
       <div class="winner-points"><span class="after"></span><span><%= team.teamPoint %></span><span class="before"></span></div>
       <div class="winner-name"><span class="colorteam <%= team.color %>"></span><%= team.team %></div>
     </div>

@@ -5,7 +5,7 @@
   <div class="grid">
 
     <div class="col-8 byCompany">
-      <div class="winner-title">Empresa</div>
+      <div class="winner-title"><%= cname %></div>
       <ul>
         <% company.forEach((team, index) => { %>
           <li><span class="colorteam <%= team.color %>"></span><%= team.team %><span class="companyPoints"><%= team.teamPoints %></span></li>
