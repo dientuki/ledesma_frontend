@@ -17,4 +17,8 @@
     margin-left: (40em/$tfs);
     display: inline-block;
   }
+
+  .bg-plain & {
+    border-bottom: solid (2em/$fs) $titleBG;
+  }
 }

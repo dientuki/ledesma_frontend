@@ -16,28 +16,18 @@
         return "";
       }
 
-      /*
-      if (window.location.pathname == '/global') {
-        setTimeout(function(){
-          const company = getCookie('company'),
-                  page = '/company/:id';
-          window.location.replace(page.replace(':id', company));
-        }, 1000*10);
-      }
-      */
 
-      const socket = io.connect('http://mateclass.com:5000');
+      const socket = io.connect('http://localhost:5000');
 
       socket.on('change', function(page){
         const company = getCookie('company');
         window.location.replace(page.replace(':id', company));
       });
 
-      socket.on('refresh', function(page){
+      socket.on('refresh', function(id){
         const company = getCookie('company');
-        console.log(company, page);
-        
-        if (company == page) {
+
+        if (company == id) {
         window.location.reload(true);
         }
         

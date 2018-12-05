@@ -1,11 +1,15 @@
-<% include partials/head.ejs %>
+<% include partials/head-plain.ejs %>
 <div class="site">
 <% include partials/header.ejs %>
 
-<% games.forEach((game, index) => { %>
-  <p><%= game.company %></p>
-  <p><%= game.totalPoints %></p>
-<% }) %>
+  <div class="grid global-scores">
 
-</div>
+  <% games.forEach((game, index) => { %>
+    <div class="col-3">
+      <div class="global-title"><%= game.company %></div>
+      <div class="global-score"><%= game.totalPoints %></div>
+    </div>
+  <% }) %>
+
+  </div>
 <% include partials/script.ejs %>

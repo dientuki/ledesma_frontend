@@ -9,7 +9,7 @@ const server = app.listen(port, () => {
 }); //require('http').Server(app);
 const io = require('socket.io').listen(server);
 const fs = require('fs');
-const css = fs.readFileSync('dist/ledesma.css').toString();
+//const css = fs.readFileSync('dist/ledesma.css').toString();
 
 const {getWelcomePage, getPausePage, getFinishPage} = require('./routes/static');
 const {getGlobalPage} = require('./routes/global');
@@ -34,7 +34,7 @@ db.connect((err) => {
 console.log('Connected to database');
 });
 global.db = db;
-global.css = css;
+global.css = fs.readFileSync('dist/ledesma.css').toString();;
 
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port
@@ -52,8 +52,8 @@ app.get('/pause', getPausePage);
 app.get('/finish', getFinishPage);
 app.get('/global', getGlobalPage);
 
-app.get('/company/:id', getCompanyPage);
-app.get('/company/:id/result', getCompanyResultPage);
+app.get('/company/:company', getCompanyPage);
+app.get('/company/:company/result', getCompanyResultPage);
 
 app.get('/set', getSetPage);
 
@@ -68,6 +68,6 @@ io.on('connection', function(socket){
   });
 
   socket.on('refresh', function(data){
-    io.emit('refresh', data.page);
+    io.emit('refresh', data.id);
   });
 });
